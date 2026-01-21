@@ -1,12 +1,24 @@
+import java.util.*;
+
 public class Factorial {
+
     public static void main(String[] args) {
-        int num = 5;
-        int fact = 1;
-        if(num != 0){
-            for(int i = 1; i <= num; i++){
-            fact *= i;
-            }
-        }
-        System.out.println(fact);
+        Scanner scan = new Scanner(System.in);
+        System.out.print("How many number of sequence do you want ? ");
+        int num = scan.nextInt();
+        System.out.println(fact(num));
+        scan.close();
+    }
+
+    static int fact(int num) {
+        int ans = 1;
+
+        if (num == 0)
+            return ans;
+
+        for (int i = 1; i <= num; i++) 
+            ans *= i;
+        
+        return ans;
     }
 }
